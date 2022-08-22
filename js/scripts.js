@@ -40,7 +40,6 @@ let bgHeader = document.querySelector(".bg-header"),
     nameUser = document.querySelector(".input-name"),
     email = document.querySelector(".input-email"),
     companyName = document.querySelector(".input-company-name"),
-    popupClose = document.querySelector(".close-popup"),
     auditPopup = document.querySelector(".audit-register"),
     registerSubmit = document.querySelector(".register-submit")
 
@@ -54,31 +53,31 @@ document.addEventListener("scroll", function(){
 function popupOpen() {
     popup.style.display = "block",
     popup.classList.add("active-popup"), 
-    activePopup = document.querySelector(".active-popup"), 
+    activePopup = document.querySelector(".active-popup")
 }
 
 function firstPopupOpen() {
     firstPopup.style.display = "block",
     firstPopup.classList.add("active-popup"), 
-    activePopup = document.querySelector(".active-popup"), 
+    activePopup = document.querySelector(".active-popup")
 }
 
 function secondPopupOpen() {
     secondPopup.style.display = "block",
     secondPopup.classList.add("active-popup"), 
-    activePopup = document.querySelector(".active-popup"), 
+    activePopup = document.querySelector(".active-popup")
 }
 
 function popupLoadOpen() {
     popupLoad.style.display = "block",
     popupLoad.classList.add("active-popup"), 
-    activePopup = document.querySelector(".active-popup"), 
+    activePopup = document.querySelector(".active-popup")
 }
 
 function auditPopupOpen() {
     auditPopup.style.display = "block",
     auditPopup.classList.add("active-audit-popup"), 
-    activeAuditPopup = document.querySelector(".active-audit-popup"), 
+    activeAuditPopup = document.querySelector(".active-audit-popup")
 }
 
 registerSubmit.onclick = auditPopupOpen
