@@ -315,7 +315,7 @@ function loadInfo(nameUser, email, companyName){
         console.log(email.value)
     }
     if(localStorage.CompanyName != null){
-        companyName = localStorage.getItem('CompanyName');
+        companyName.value = localStorage.getItem('CompanyName');
         console.log(companyName.value)
     }
 }
