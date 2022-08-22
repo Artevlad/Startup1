@@ -37,7 +37,7 @@ let bgHeader = document.querySelector(".bg-header"),
     brownColorSecond = document.querySelector(".brown-color-second"),
     popupLoad = document.querySelector(".popup-load"),
     popupFormLoad = document.querySelector(".popup-form-load"),
-    name = document.querySelector(".input-name"),
+    nameUser = document.querySelector(".input-name"),
     email = document.querySelector(".input-email"),
     companyName = document.querySelector(".input-company-name"),
     popupClose = document.querySelector(".close-popup"),
@@ -299,16 +299,16 @@ function audit() {
 
 dragAndDrop()
 
-function loadInformation(name, email, companyName) {
-    localStorage.setItem('UserName', name.value)
+function loadInformation(nameUser, email, companyName) {
+    localStorage.setItem('UserName', nameUser.value)
     localStorage.setItem('Email', email.value)
     localStorage.setItem('CompanyName', companyName.value)
 }
 
-function loadInfo(name, email, companyName){
+function loadInfo(nameUser, email, companyName){
     if(localStorage.UserName != null){
-        name.value = localStorage.getItem('UserName');
-        console.log(name.value)
+        nameUser.value = localStorage.getItem('UserName');
+        console.log(nameUser.value)
     }
     if(localStorage.Email != null){
         email.value = localStorage.getItem('Email');
@@ -319,4 +319,4 @@ function loadInfo(name, email, companyName){
         console.log(companyName.value)
     }
 }
-loadInfo(name, email, companyName)
+loadInfo(nameUser, email, companyName)
