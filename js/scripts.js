@@ -307,7 +307,7 @@ function loadInformation(name, email, companyName) {
 
 function loadInfo(name, email, companyName){
     if(localStorage.UserName != null){
-        name.value = localStorage.getItem('Name');
+        name.value = localStorage.getItem('UserName');
         console.log(name.value)
     }
     if(localStorage.Email != null){
@@ -319,4 +319,4 @@ function loadInfo(name, email, companyName){
         console.log(companyName.value)
     }
 }
-loadInfo()
+loadInfo(name, email, companyName)
