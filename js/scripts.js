@@ -55,35 +55,30 @@ function popupOpen() {
     popup.style.display = "block",
     popup.classList.add("active-popup"), 
     activePopup = document.querySelector(".active-popup"), 
-    popupClose.onclick = closePopup;
 }
 
 function firstPopupOpen() {
     firstPopup.style.display = "block",
     firstPopup.classList.add("active-popup"), 
     activePopup = document.querySelector(".active-popup"), 
-    popupClose.onclick = closePopup;
 }
 
 function secondPopupOpen() {
     secondPopup.style.display = "block",
     secondPopup.classList.add("active-popup"), 
     activePopup = document.querySelector(".active-popup"), 
-    popupClose.onclick = closePopup;
 }
 
 function popupLoadOpen() {
     popupLoad.style.display = "block",
     popupLoad.classList.add("active-popup"), 
     activePopup = document.querySelector(".active-popup"), 
-    popupClose.onclick = closePopup;
 }
 
 function auditPopupOpen() {
     auditPopup.style.display = "block",
     auditPopup.classList.add("active-audit-popup"), 
     activeAuditPopup = document.querySelector(".active-audit-popup"), 
-    popupClose.onclick = closeAuditPopup;
 }
 
 registerSubmit.onclick = auditPopupOpen
