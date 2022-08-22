@@ -300,13 +300,13 @@ function audit() {
 dragAndDrop()
 
 function loadInformation(name, email, companyName) {
-    localStorage.setItem('Name', name.value)
+    localStorage.setItem('UserName', name.value)
     localStorage.setItem('Email', email.value)
     localStorage.setItem('CompanyName', companyName.value)
 }
 
-/*function loadInfo(name, email, companyName){
-    if(localStorage.Name != null){
+function loadInfo(name, email, companyName){
+    if(localStorage.UserName != null){
         name.value = localStorage.getItem('Name');
         console.log(name.value)
     }
@@ -319,4 +319,4 @@ function loadInformation(name, email, companyName) {
         console.log(companyName.value)
     }
 }
-loadInfo()*/
+loadInfo()
