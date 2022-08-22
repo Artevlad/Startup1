@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>STARTUP - Creative Agency Template</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header class = "bg-header">
+		<div class="wrapper">
+			<div class="line-menu">
+				<a href="#">
+					<img alt="STARTUP - Creative Agency Template" src="img/logo_startup.png">
+				</a>
+				<nav class="menu">
+					<ul>
+						<li>
+							<a href="javascript:void(0)" class="menu-home">Home</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-services" onclick="scrollServices()">Services</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-about" onclick="scrollAbout()">About</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-works" onclick="scrollWorks()">Works</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-blog" onclick="scrollBlog()">Blog</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-clients" onclick="scrollClients()">Clients</a>
+						</li>
+						<li>
+							<a href="javascript:void(0)" class="menu-contsct" onclick="scrollContact()">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="header-content">
+				<h1>Welcome to STARTUP</h1>
+				<p>Your Favourite Creative Agency Template</p>
+				<a class="button registration" href="#">Get Started</a>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div class="popup">
+			<form class="popup-form" action="javascript:void(0)">
+				<span class="close-popup" onclick="closePopup()"></span>
+				<h2>registration</h2>
+				<p>
+					<input class="register-input" id="popup-name" maxlength="30" name="popup-name" placeholder="Your name" type="text">
+					<label for="popup-name"></label>
+				</p>
+				<p>
+					<input class="register-input" id="popup-email" maxlength="40" name="popup-email" placeholder="Your e-mail" type="email">
+					<label for="popup-email"></label>
+				</p>
+				<p>
+					<input class="register-input" id="popup-password" name="popup-password" placeholder="Your password" type="password">
+					<label for="popup-password"></label>
+				</p>
+				<p>
+					<input class="submit register-submit" id="popoup-submit" type="submit" value="Register">
+					<label for="submit"></label>
+				</p>
+			</form>
+		</div>
+		<div class="audit-register">
+			<div class="popup-form">
+				<span class="close-popup" onclick="closeAuditPopup()"></span>
+				<div class="audit-first">
+					<div class="green-color-first" draggable="true"></div>
+					<div class="red-color-first" draggable="true"></div>
+					<div class="blue-color-first" draggable="true"></div>
+					<div class="brown-color-first" draggable="true"></div>
+				</div>
+				<div class="audit-second">
+					<div class="brown-color-second finishDrop"></div>
+					<div class="red-color-second finishDrop"></div>
+					<div class="green-color-second finishDrop"></div>
+					<div class="blue-color-second finishDrop"></div>
+				</div>
+				<div class="audit-a-flex">
+					<a href="javascript:void(0)" class="audit-a">Sign-in</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<section>
+				<h2>Services</h2>
+				<p class="subtitle">We offer ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+				<div class="services-menu">
+					<div class="services typography">
+						<span class="hover"></span>
+						<div class="picture"></div>
+						<strong class="services-title first-strong">Clean Typography</strong>
+						<strong class="hack-strong fourth-strong">Hack This Site</strong>
+						<p class="about-services">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+					</div>
+					<div class="services code">
+						<span class="hover"></span>
+						<div class="picture"></div>
+						<strong class="services-title second-strong">Rock Solid Code</strong>
+						<strong class="hack-strong fifth-strong">Hack This Site</strong>
+						<p class="about-services">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+					</div>
+					<div class="services support ">
+						<span class="hover"></span>
+						<div class="picture"></div>
+						<strong class="services-title third-strong">Expert Support</strong>
+						<strong class="hack-strong sixth-strong">Hack This Site</strong>
+						<p class="about-services">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit. Lorem ipsum.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<section class="about-us">
+			<div class="wrapper">
+				<h2 >About us</h2>
+				<p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+				<div class="about-us-line">
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum dolor sit amet. Lorem ipsum eat.</p>
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sediam nonumy eirtempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At vero eos eaccusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Loreipsum dolor sit amet. Lorem ipsum dolor et.</p>
+				</div>
+				<div class="people-relative">
+					<a class="arrow arrow-left" href="javascript:void(0)"></a>
+					<a class="arrow arrow-right" href="javascript:void(0)"></a>
+					<div class="people-line">
+						<div class="people">
+							<div class="people-photo">
+								<img alt="Md. Khalil Uddin" src="img/people_first.jpg">
+								<div class="soc-line">
+									<a class="fb" href="#"></a>
+									<a class="tw" href="#"></a>
+									<a class="g-plus" href="#"></a>
+									<a class="in" href="#"></a>
+								</div>
+							</div>
+							<p class="name">Md. Khalil Uddin</p>
+							<p class="profession">Head of Ideas</p>
+						</div>
+						<div class="people">
+							<div class="people-photo">
+								<img alt="Rubel Miah" src="img/people_second.jpg">
+								<div class="soc-line">
+									<a class="fb" href="#"></a>
+									<a class="tw" href="#"></a>
+									<a class="g-plus" href="#"></a>
+									<a class="in" href="#"></a>
+								</div>
+							</div>
+							<p class="name">Rubel Miah</p>
+							<p class="profession">Lead WordPress Developer</p>
+						</div>
+						<div class="people">
+							<div class="people-photo">
+								<img alt="Shamim Mia" src="img/people_third.jpg">
+								<div class="soc-line">
+									<a class="fb" href="#"></a>
+									<a class="tw" href="#"></a>
+									<a class="g-plus" href="#"></a>
+									<a class="in" href="#"></a>
+								</div>
+							</div>
+							<p class="name">Shamim Mia</p>
+							<p class="profession">Sr. Web Developer</p>
+						</div>
+						<div class="people">
+							<div class="people-photo">
+								<img alt="John Doe" src="img/people_fourth.jpg">
+								<div class="soc-line">
+									<a class="fb" href="#"></a>
+									<a class="tw" href="#"></a>
+									<a class="g-plus" href="#"></a>
+									<a class="in" href="#"></a>
+								</div>
+							</div>
+							<p class="name">John Doe</p>
+							<p class="profession">Front-end Developer</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="wrapper">
+			<section>
+				<h2 >Latest Works</h2>
+				<ul class="ul-menu">
+					<li>
+						<a href="javascript:void(0)" class="all" onclick="allOpen()">All</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="branding" onclick="brandingOpen()">Branding</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="design" onclick="designOpen()">Design</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="development" onclick="developmentOpen()">Development</a>
+					</li>
+					<li>
+						<a href="javascript:void(0)" class="strategy" onclick="strategyOpen()">Strategy</a>
+					</li>
+				</ul>
+				<div class="photos">
+					<div class="photo photo-first">
+						<img alt="Hair Dresser" src="img/photo_first.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-second">
+						<img alt="Hair Dresser" src="img/photo_second.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-third">
+						<img alt="Hair Dresser" src="img/photo_third.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-fouth">
+						<img alt="Hair Dresser" src="img/photo-fourth.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-fifth">
+						<img alt="Hair Dresser" src="img/photo_fifth.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-sixth">
+						<img alt="Hair Dresser" src="img/photo_sixth.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-seventh">
+						<img alt="Hair Dresser" src="img/photo_seventh.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-eighth">
+						<img alt="Hair Dresser" src="img/photo_eighth.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+					<div class="photo photo-ninth">
+						<img alt="Hair Dresser" src="img/photo_ninth.jpg">
+						<div class="photo-hover">
+							<strong class="photo-first-text">Hair Dresser</strong>
+							<p class="photo-second-text">Branding</p>
+							<a class="button" href="#">view</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<section class="do-you-like">
+			<div class="wrapper">
+				<p class="about-do-you-like">Do you like OUR WORK so far?<br>
+				Let's talk about YOUR PROJECT!</p>
+				<a class="button" onclick="window.scrollTo(0, (window.pageYOffset + 1950))">Get in Touch</a>
+			</div>
+		</section>
+		<div class="wrapper">
+			<section>
+				<h2 >Recent blog posts</h2>
+				<p class="subtitle ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+				<div class="post">
+					<img alt="Startup photo" src="img/post_first.jpg">
+					<div class="post-info">
+						<div class="date">
+							<p>18<br>Oct</p>
+						</div>
+						<div class="block-title">
+							<h3 class="hover-red">Startup ideas needs to be funded</h3>
+							<p class="subtitle">By <span class="hover-red">Khalil</span> 
+								<span>Uddin in</span> 
+								<span class="hover-red">Development</span>
+							</p>
+						</div>
+						<p class="about-post">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et dolore aliquyam erat, sed diam</p>
+						<a class="read-more" href="javascript:void(0)" onclick="firstPopupOpen()">Read more</a>
+						<div class="first-popup">
+							<div class="popup-form">
+								<span class="close-popup" onclick="closePopup()"></span>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sequi ab voluptatum quaerat vel minima fugiat optio aliquid excepturi. Magni animi iste soluta, veritatis sit aperiam aut tenetur accusantium iure.</p><br>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde numquam sequi debitis? Deleniti, quod dignissimos! Aspernatur aliquid vero modi? Laudantium dolorem ipsum alias magni voluptatem? Natus eos reprehenderit labore!</p><br>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, eaque nisi. Adipisci nesciunt velit quas voluptatem exercitationem architecto, porro neque, totam veritatis molestiae eveniet magni cupiditate unde, maiores libero consectetur.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="post">
+					<img alt="Startup photo" src="img/post_second.jpg">
+					<div class="post-info ">
+						<div class="date">
+							<p>18<br>Oct</p>
+						</div>
+						<div class="block-title">
+							<h3 class="hover-red">User Interface Designing Elements</h3>
+							<p class="subtitle">By 
+								<span class="hover-red">Khalil</span> 
+								<span>Uddin in</span> 
+								<span class="hover-red">Development</span>
+							</p>
+						</div>
+						<p class="about-post">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor idunt ut labore et dolore aliquyam</p>
+						<a class="read-more" href="javascript:void(0)" onclick="secondPopupOpen()">Read more</a>
+						<div class="second-popup">
+							<div class="popup-form">
+								<span class="close-popup" onclick="closePopup()"></span>
+								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sequi ab voluptatum quaerat vel minima fugiat optio aliquid excepturi. Magni animi iste soluta, veritatis sit aperiam aut tenetur accusantium iure.</p><br>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde numquam sequi debitis? Deleniti, quod dignissimos! Aspernatur aliquid vero modi? Laudantium dolorem ipsum alias magni voluptatem? Natus eos reprehenderit labore!</p><br>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, eaque nisi. Adipisci nesciunt velit quas voluptatem exercitationem architecto, porro neque, totam veritatis molestiae eveniet magni cupiditate unde, maiores libero consectetur.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<section class="quotes">
+			<div class="quotes-wrapper">
+				<div class="companies">
+					<img alt="Deorham networks" src="img/logo_first.png">
+					<img alt="Ratings" src="img/logo_second.png">
+					<img alt="Malik Media" src="img/logo_third.png">
+					<img alt="Bcause" src="img/logo_fourth.png">
+					<img alt="Womqily" src="img/logo_fifth.png">
+				</div>
+				<p>“Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+				<p class="quotes-p-two">John Doe, Google Inc.</p>
+			</div>
+		</section>
+		<div class="wrapper">
+			<section>
+				<h2 >Get in touch</h2>
+				<p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
+				<div class="div-flex">
+					<div class="info ">
+						<div class="address">
+							<b>Address</b>
+							<p>312, 7th Ave, New York</p>
+							<p>NY 101200, United States of America</p>
+						</div>
+						<div class="hotline">
+							<b>Hotline (24x7)</b>
+							<p>+65 0052 300, +65 88251 210</p>
+							<p>+88 01723 511 340</p>
+						</div>
+						<div class="email">
+							<b>E-mail</b>
+							<p>shapedtheme@gmail.com</p>
+							<p>khalilkode@gmail.com</p>
+						</div>
+					</div>
+					<form action="javascript:void(0)" class="registr-form">
+						<div class="input-text">
+							<input id="name" maxlength="30" name="name" placeholder="Your name" type="text" class="input-name">
+							<label for="name"></label>
+							<input id="email" maxlength="40" name="email" placeholder="Your e-mail" type="email" class="input-email"> 
+							<label for="email"></label>
+						</div>
+						<div class="input-text">
+							<input id="subject" maxlength="30" name="name" placeholder="Your subject" type="text">
+							<label for="name"></label>
+							<input id="company-name" maxlength="30" name="text" placeholder="Company name" type="text" class="input-company-name">
+							<label for="text"></label>
+						</div>
+						<div class="input-texterea">
+							<textarea id="message" maxlength="300" name="name" placeholder="Write your message"></textarea>
+							<label for="message"></label>
+						</div>
+						<div class="submit-line">
+							<input class="submit" id="submit" type="submit" value="Send message" onclick="popupLoadOpen()"> 
+							<label for="submit">
+								<span class="red">*</span>
+								 We’ll contact you as as possible. We don’t reply on Monday.
+							</label>
+						</div>
+					</form>
+					<div class="popup-load">
+						<form action="javascript:void(0)" class="popup-form-load">
+							<span class="close-popup" onclick="closePopup()"></span>
+							<p>Чи хочите ви зберегти дані ?</p>
+							<div class="submit-line">
+								<input class="submit" id="submit" type="submit" value="Так" onclick="loadInformation(name, email, companyName)"> 
+								<label for="submit"></label>
+							</div>
+							<div class="submit-line">
+								<input class="submit" id="submit" type="submit" value="Ні" > 
+								<label for="submit"></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+	<footer>
+		<section>
+			<div class="sprite-line">
+				<a class="soc" href="#"></a>
+				<a class="soc" href="#"></a>
+				<a class="soc" href="#"></a>
+				<a class="soc" href="#"></a>
+			</div>
+			<p class="copy">© 2015 Startup, Designed by ShapedTheme</p>
+		</section>
+	</footer>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
