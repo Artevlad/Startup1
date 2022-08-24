@@ -6,6 +6,10 @@ body {
 	margin: 0;
 	overflow-x: hidden;
 }
+body,
+html{
+	scroll-behavior: smooth;
+}
 header {
 	padding: 30px 0;
 	color: #fff;
@@ -341,7 +345,7 @@ section {
 .ul-menu a:hover {
 	color: #c0301c;
 }
-.ul-menu .active-filter {
+.ul-menu li::selection a{
 	color: #c0301c;
 }
 .photos {
@@ -406,7 +410,7 @@ section {
 }
 .do-you-like {
 	background: url(../img/bg_main.jpg), rgba(192, 48, 28, .6);
-	background-size: 100% auto;
+	background-size: 100% 100%;
 	background-attachment: fixed;
 }
 .do-you-like a:hover {
@@ -591,10 +595,8 @@ h3 {
 textarea {
 	height: 105px;
 }
-.submit-line {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.submit{
+	border-radius: 5px;
 }
 input.submit {
 	width: 25%;
@@ -647,6 +649,11 @@ input.submit:hover {
 	max-height: 80vh;
 	scrollbar-width: none;
 }
+.popup-load-flex{
+	display: flex;
+	margin-top: 35px;
+	justify-content: center;
+}
 .popup-form .register-submit+label {
 	width: 0;
 	padding: 0
@@ -693,24 +700,6 @@ input.submit:hover {
 .hack-strong {
 	display: none;
 }
-
-/*.audit-register{
-	display: none;
-	top: 50%;
-	left: 50%;
-	width: 45%;
-	padding: 2%;
-	border-radius: 30px;
-	max-height: 80vh;
-	border: 2px solid red;
-	position: fixed;
-	z-index: 12;
-	position: absolute;
-	transform: translate(-50%, -50%);
-	background-color: #fff;
-	max-height: 80vh;
-	scrollbar-width: none;
-}*/
 
 .audit-first,
 .audit-second,
@@ -800,4 +789,22 @@ input.submit:hover {
     width: 120px;
     height: 50px;
     border: 1px solid brown;
+}
+
+.slide {
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+.slide-button {
+	z-index: 1;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	margin: 0 5px;
+	background-color: #ddd;
+	transition: all .5s ease
+}
+.slide-button:hover {
+	cursor: pointer
 }

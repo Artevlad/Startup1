@@ -41,13 +41,33 @@ let bgHeader = document.querySelector(".bg-header"),
     email = document.querySelector(".input-email"),
     companyName = document.querySelector(".input-company-name"),
     auditPopup = document.querySelector(".audit-register"),
-    registerSubmit = document.querySelector(".register-submit")
+    registerSubmit = document.querySelector(".register-submit"),
+    colorRed = document.querySelector(".color-red"),
+    yourName = document.querySelector(".your-name"),
+    yourEmail = document.querySelector(".your-email"),
+    yourPassword = document.querySelector(".your-password"),
+    scrollService = document.getElementById("services"),
+    scrollAboutUs = document.getElementById("about-us"),
+    scrollLatestWorks = document.getElementById("latest-works"),
+    scrollDoYouLike = document.getElementById("do-you-like"),
+    scrollToBlog = document.getElementById("blog"),
+    scrollGetInTouch = document.getElementById("get-in-touch"),
+    subject = document.getElementById("subject"),
+    message = document.getElementById("message")
 
 document.addEventListener("scroll", function(){
     bgHeader.style.backgroundSize = (100 + (window.pageYOffset / 5) + "%") + "auto";
-    bgHeader.style.transition = "all 2s ease";
-    bgDoYouLike.style.backgroundSize = (100 + ((window.pageYOffset - bgDoYouLike.getBoundingClientRect().y) / 5) + "%") + "auto";
-    bgDoYouLike.style.transition = "all 2s ease";
+    bgHeader.style.transition = "all 4s ease";
+} )
+
+document.addEventListener("mouseenter", function(){
+    bgDoYouLike.style.backgroundSize = 115 + "%" + "100" + "%";
+    bgDoYouLike.style.transition = "all 5s ease";
+} )
+
+document.addEventListener("mouseleave", function(){
+    bgDoYouLike.style.backgroundSize = 100 + "%" + "100" + "%";
+    bgDoYouLike.style.transition = "all 5s ease";
 } )
 
 function popupOpen() {
@@ -69,15 +89,23 @@ function secondPopupOpen() {
 }
 
 function popupLoadOpen() {
-    popupLoad.style.display = "block",
-    popupLoad.classList.add("active-popup"), 
-    activePopup = document.querySelector(".active-popup")
+    if(nameUser.value != '' && email.value != '' && companyName.value != '' && message.value != '' && subject.value != ''){
+        popupLoad.style.display = "block",
+        popupLoad.classList.add("active-popup"), 
+        activePopup = document.querySelector(".active-popup")
+    } else {
+        alert("Ви не заповнили всі дані")
+    }
 }
 
 function auditPopupOpen() {
-    auditPopup.style.display = "block",
-    auditPopup.classList.add("active-audit-popup"), 
-    activeAuditPopup = document.querySelector(".active-audit-popup")
+    if(yourName.value != '' && yourEmail.value!= '' && yourPassword.value != ''){
+        auditPopup.style.display = "block",
+        auditPopup.classList.add("active-audit-popup"), 
+        activeAuditPopup = document.querySelector(".active-audit-popup")
+    } else {
+        alert("Ви не заповнили всі дані")
+    }
 }
 
 registerSubmit.onclick = auditPopupOpen
@@ -192,27 +220,27 @@ if(localStorage.PInfo == 'All' || localStorage.PInfo === null){
 }
 
 function scrollServices(){
-    window.scrollTo(0 , (window.pageYOffset + 650))
+    scrollService.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function scrollAbout(){
-    window.scrollTo(0, (window.pageYOffset + 1260))
+    scrollAboutUs.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function scrollWorks(){
-    window.scrollTo(0, (window.pageYOffset + 2150))
+    scrollLatestWorks.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function scrollBlog(){
-    window.scrollTo(0, (window.pageYOffset + 3965))
+    scrollToBlog.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function scrollClients(){
-    window.scrollTo(0, (window.pageYOffset + 5140))
+    scrollDoYouLike.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function scrollContact(){
-    window.scrollTo(0, (window.pageYOffset + 5650))
+    scrollGetInTouch.scrollIntoView({block: "start", behavior: "smooth"})
 }
 
 function podia(e){
@@ -249,7 +277,6 @@ const dragAndDrop = () => {
     
     const dragLeave = function () {
         this.classList.remove('hovered')
-        
     }
     
     const dragDrop = function (event) {
@@ -281,12 +308,12 @@ const dragAndDrop = () => {
 }
 
 function audit() {
-    cells.forEach((cell) => {
-        if(cell.getAttribute("data-color") != cell.children[0].getAttribute("data-color")){
-            alert("Колір блоку не відповідає кольору рамки, спробуйте ще раз!")
-        }else{
+    finishDrop.forEach((cell) => {
+        if(cell.getAttribute("data-color") == cell.children[0].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[1].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[2].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[3].getAttribute("data-color")){
             alert("Вхід успішний")
-            popupHidden()
+        }else{
+            alert("Колір блоку не відповідає кольору рамки, спробуйте ще раз!")
+            closeAuditPopup()
         }
     }) 
 }
@@ -314,3 +341,23 @@ function loadInfo(nameUser, email, companyName){
     }
 }
 loadInfo(nameUser, email, companyName)
+
+function registrationText(yourName, yourEmail) {
+    localStorage.setItem('YourName', yourName.value)
+    localStorage.setItem('YourEmail', yourEmail.value)
+}
+
+function loadRegistrationText(yourName, yourEmail){
+    if(localStorage.YourName != null){
+        yourName.value = localStorage.getItem('YourName');
+        console.log(yourName.value)
+    } else {
+        console.log("vse pogano")
+    }
+    if(localStorage.yourEmail != null){
+        yourEmail.value = localStorage.getItem('YourEmail');
+        console.log(yourEmail.value)
+    }
+}
+
+loadRegistrationText(yourName, yourEmail)

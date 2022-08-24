@@ -53,19 +53,19 @@
 				<span class="close-popup" onclick="closePopup()"></span>
 				<h2>registration</h2>
 				<p>
-					<input class="register-input" id="popup-name" maxlength="30" name="popup-name" placeholder="Your name" type="text">
+					<input class="register-input your-name" id="popup-name" maxlength="30" name="popup-name" placeholder="Your name" type="text">
 					<label for="popup-name"></label>
 				</p>
 				<p>
-					<input class="register-input" id="popup-email" maxlength="40" name="popup-email" placeholder="Your e-mail" type="email">
+					<input class="register-input your-email" id="popup-email" maxlength="40" name="popup-email" placeholder="Your e-mail" type="email">
 					<label for="popup-email"></label>
 				</p>
 				<p>
-					<input class="register-input" id="popup-password" name="popup-password" placeholder="Your password" type="password">
+					<input class="register-input your-password" id="popup-password" name="popup-password" placeholder="Your password" type="password">
 					<label for="popup-password"></label>
 				</p>
 				<p>
-					<input class="submit register-submit" id="popoup-submit" type="submit" value="Register">
+					<input class="submit register-submit" id="popoup-submit" type="submit" value="Register" onclick="registrationText(yourName, yourEmail)">
 					<label for="submit"></label>
 				</p>
 			</form>
@@ -74,23 +74,23 @@
 			<div class="popup-form">
 				<span class="close-popup" onclick="closeAuditPopup()"></span>
 				<div class="audit-first">
-					<div class="green-color-first" draggable="true"></div>
-					<div class="red-color-first" draggable="true"></div>
-					<div class="blue-color-first" draggable="true"></div>
-					<div class="brown-color-first" draggable="true"></div>
+					<div class="green-color-first" draggable="true" data-color="green"></div>
+					<div class="red-color-first" draggable="true" data-color="red"></div>
+					<div class="blue-color-first" draggable="true" data-color="blue"></div>
+					<div class="brown-color-first" draggable="true" data-color="brown"></div>
 				</div>
 				<div class="audit-second">
-					<div class="brown-color-second finishDrop"></div>
-					<div class="red-color-second finishDrop"></div>
-					<div class="green-color-second finishDrop"></div>
-					<div class="blue-color-second finishDrop"></div>
+					<div class="brown-color-second finishDrop" data-color="brown"></div>
+					<div class="red-color-second finishDrop" data-color="red"></div>
+					<div class="green-color-second finishDrop" data-color="green"></div>
+					<div class="blue-color-second finishDrop" data-color="blue"></div>
 				</div>
 				<div class="audit-a-flex">
-					<a href="javascript:void(0)" class="audit-a">Sign-in</a>
+					<a href="javascript:void(0)" class="audit-a" onclick="audit()">Sign-in</a>
 				</div>
 			</div>
 		</div>
-		<div class="wrapper">
+		<div class="wrapper" id="services">
 			<section>
 				<h2>Services</h2>
 				<p class="subtitle">We offer ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
@@ -119,7 +119,7 @@
 				</div>
 			</section>
 		</div>
-		<section class="about-us">
+		<section class="about-us" id="about-us">
 			<div class="wrapper">
 				<h2 >About us</h2>
 				<p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
@@ -187,24 +187,24 @@
 				</div>
 			</div>
 		</section>
-		<div class="wrapper">
+		<div class="wrapper" id="latest-works">
 			<section>
 				<h2 >Latest Works</h2>
 				<ul class="ul-menu">
 					<li>
-						<a href="javascript:void(0)" class="all" onclick="allOpen()">All</a>
+						<a href="javascript:void(0)" class="all color-red" onclick="allOpen()">All</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" class="branding" onclick="brandingOpen()">Branding</a>
+						<a href="javascript:void(0)" class="branding color-red" onclick="brandingOpen()">Branding</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" class="design" onclick="designOpen()">Design</a>
+						<a href="javascript:void(0)" class="design color-red" onclick="designOpen()">Design</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" class="development" onclick="developmentOpen()">Development</a>
+						<a href="javascript:void(0)" class="development color-red" onclick="developmentOpen()">Development</a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" class="strategy" onclick="strategyOpen()">Strategy</a>
+						<a href="javascript:void(0)" class="strategy color-red" onclick="strategyOpen()">Strategy</a>
 					</li>
 				</ul>
 				<div class="photos">
@@ -283,14 +283,14 @@
 				</div>
 			</section>
 		</div>
-		<section class="do-you-like">
+		<section class="do-you-like" id="do-you-like">
 			<div class="wrapper">
 				<p class="about-do-you-like">Do you like OUR WORK so far?<br>
 				Let's talk about YOUR PROJECT!</p>
-				<a class="button" onclick="window.scrollTo(0, (window.pageYOffset + 1950))">Get in Touch</a>
+				<a class="button" onclick="scrollContact()">Get in Touch</a>
 			</div>
 		</section>
-		<div class="wrapper">
+		<div class="wrapper" id="blog">
 			<section>
 				<h2 >Recent blog posts</h2>
 				<p class="subtitle ">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
@@ -313,8 +313,8 @@
 							<div class="popup-form">
 								<span class="close-popup" onclick="closePopup()"></span>
 								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sequi ab voluptatum quaerat vel minima fugiat optio aliquid excepturi. Magni animi iste soluta, veritatis sit aperiam aut tenetur accusantium iure.</p><br>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde numquam sequi debitis? Deleniti, quod dignissimos! Aspernatur aliquid vero modi? Laudantium dolorem ipsum alias magni voluptatem? Natus eos reprehenderit labore!</p><br>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, eaque nisi. Adipisci nesciunt velit quas voluptatem exercitationem architecto, porro neque, totam veritatis molestiae eveniet magni cupiditate unde, maiores libero consectetur.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, eaque nisi. Adipisci nesciunt velit quas voluptatem exercitationem architecto, porro neque, totam veritatis molestiae eveniet magni cupiditate unde, maiores libero consectetur.</p><br>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et autem nulla vero tempora inventore facilis quas, consequuntur illo maiores suscipit ab mollitia. Debitis eaque esse doloribus sunt corrupti quia aspernatur ipsam id accusamus dicta quaerat officiis optio vitae non expedita dolor, animi quos, architecto cumque officia, nihil qui! Dicta minus corrupti incidunt alias voluptatum, natus perspiciatis eum eos praesentium nostrum suscipit quod? Aut, magnam. Eveniet molestias ipsam explicabo, reprehenderit culpa quam repellendus repudiandae mollitia! Quibusdam quo eum sequi ullam. Optio quae asperiores nostrum nulla? A optio dolorum consequatur ullam, totam, officia nostrum aut iste eligendi, aperiam aliquid velit quasi reiciendis! A consequatur tenetur odit necessitatibus reiciendis tempore eaque voluptatibus hic repellendus dignissimos laborum, quisquam, atque at obcaecati explicabo possimus magni.</p>
 							</div>
 						</div>
 					</div>
@@ -339,8 +339,8 @@
 							<div class="popup-form">
 								<span class="close-popup" onclick="closePopup()"></span>
 								<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam sequi ab voluptatum quaerat vel minima fugiat optio aliquid excepturi. Magni animi iste soluta, veritatis sit aperiam aut tenetur accusantium iure.</p><br>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id unde numquam sequi debitis? Deleniti, quod dignissimos! Aspernatur aliquid vero modi? Laudantium dolorem ipsum alias magni voluptatem? Natus eos reprehenderit labore!</p><br>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, eaque nisi. Adipisci nesciunt velit quas voluptatem exercitationem architecto, porro neque, totam veritatis molestiae eveniet magni cupiditate unde, maiores libero consectetur.</p>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur earum iusto excepturi quaerat sunt nostrum, molestiae quidem animi enim provident velit voluptate perspiciatis id ea ipsam, assumenda reprehenderit accusantium inventore quae eaque amet nobis. Vero enim iusto architecto incidunt nulla reiciendis maiores rerum adipisci nostrum doloribus, libero excepturi fugiat ducimus harum ipsa dolorum repellendus numquam non, id magnam deserunt quam. Id fugiat atque minima temporibus eveniet voluptatibus soluta deserunt at numquam, hic harum, eius, facere error ducimus iste voluptates earum vitae iusto nulla! Repellendus, quia sapiente tempore alias numquam quos nihil dignissimos minus consequuntur accusamus adipisci eveniet deserunt sint suscipit soluta rerum laboriosam itaque beatae fuga consequatur quod consectetur autem. Asperiores iste sapiente doloribus totam perferendis dicta eos voluptatibus quaerat debitis, autem ipsa dolorem unde fugiat similique dolor ab vel odit architecto in? Vel, doloremque sit animi hic amet nihil iusto ex qui sed earum, possimus ipsa ipsam deserunt laboriosam aperiam accusantium architecto atque aut? Optio totam corporis dicta, nisi quo laboriosam iste voluptate nulla recusandae iusto et, tenetur beatae rerum dolore officiis officia ipsam delectus perspiciatis soluta eius! Ipsam.</p>
+								<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio obcaecati tempore unde, nesciunt explicabo quos doloremque blanditiis sequi quasi omnis. Repellendus sequi inventore laudantium facere magni laboriosam tempora debitis voluptatum!</p>
 							</div>
 						</div>
 					</div>
@@ -356,11 +356,28 @@
 					<img alt="Bcause" src="img/logo_fourth.png">
 					<img alt="Womqily" src="img/logo_fifth.png">
 				</div>
-				<p>“Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
-				<p class="quotes-p-two">John Doe, Google Inc.</p>
+				<div class="cites animation-fade">
+					<div class="cite">
+						<p>“Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum”</p>
+						<p class="quotes-p-two">John Doe, Google Inc.</p>
+					</div>
+					<div class="cite">
+						<p>“A person who never made a mistake never tried anything new.”</p>
+						<p class="quotes-p-two">Albert Einstein, writer.</p>
+					</div>
+					<div class="cite">
+						<p>“Success is the child of audacity.”</p>
+						<p class="quotes-p-two">Benjamin Disraeli, writer.</p>
+					</div>
+				</div>
+				<div class="slide animation-fade">
+					<span class="slide-button" id="sdf1"></span>
+					<span class="slide-button" id="sdf2"></span>
+					<span class="slide-button" id="sdf3"></span>
+				</div>
 			</div>
 		</section>
-		<div class="wrapper">
+		<div class="wrapper" id="get-in-touch">
 			<section>
 				<h2 >Get in touch</h2>
 				<p class="subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
@@ -409,15 +426,17 @@
 					</form>
 					<div class="popup-load">
 						<form action="javascript:void(0)" class="popup-form-load">
-							<span class="close-popup" onclick="closePopup()"></span>
 							<p>Чи хочите ви зберегти дані ?</p>
-							<div class="submit-line">
-								<input class="submit" id="submit" type="submit" value="Так" onclick="loadInformation(nameUser, email, companyName)"> 
-								<label for="submit"></label>
-							</div>
-							<div class="submit-line">
-								<input class="submit" id="submit" type="submit" value="Ні" > 
-								<label for="submit"></label>
+							<div class="popup-load-flex">
+								<span class="close-popup" onclick="closePopup()"></span>
+								<div class="submit-line">
+									<input class="submit" id="submit-yes" type="submit" value="Так" onclick="loadInformation(nameUser, email, companyName), closePopup(), alert('Ваше повідомлення надіслане')"> 
+									<label for="submit"></label>
+								</div>
+								<div class="submit-line">
+									<input class="submit" id="submit-no" type="submit" value="Ні" onclick="closePopup()"> 
+									<label for="submit"></label>
+								</div>
 							</div>
 						</form>
 					</div>
