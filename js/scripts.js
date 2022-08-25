@@ -365,8 +365,6 @@ function loadRegistrationText(yourName, yourEmail){
     if(localStorage.YourName != null){
         yourName.value = localStorage.getItem('YourName');
         console.log(yourName.value)
-    } else {
-        console.log("vse pogano")
     }
     if(localStorage.yourEmail != null){
         yourEmail.value = localStorage.getItem('YourEmail');
