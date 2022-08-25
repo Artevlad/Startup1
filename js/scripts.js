@@ -53,7 +53,19 @@ let bgHeader = document.querySelector(".bg-header"),
     scrollToBlog = document.getElementById("blog"),
     scrollGetInTouch = document.getElementById("get-in-touch"),
     subject = document.getElementById("subject"),
-    message = document.getElementById("message")
+    message = document.getElementById("message"),
+    cite = document.querySelector(".cite"),
+    slideButton = document.querySelector(".slide-button"),
+    showedCite
+
+greenColorFirst.dataset.color = "green",
+redColorFirst.dataset.color = "red",
+blueColorFirst.dataset.color = "blue",
+brownColorFirst.dataset.color = "brown",
+greenColorSecond.dataset.color ="green",
+redColorSecond.dataset.color = "red",
+blueColorSecond.dataset.color = "blue",
+brownColorSecond.dataset.color = "brown"
 
 document.addEventListener("scroll", function(){
     bgHeader.style.backgroundSize = (100 + (window.pageYOffset / 5) + "%") + "auto";
@@ -304,13 +316,15 @@ const dragAndDrop = () => {
     blueBlock.addEventListener('dragend', dragEnd)
     brownBlock.addEventListener('dragstart', dragStart)
     brownBlock.addEventListener('dragend', dragEnd)
-
 }
 
 function audit() {
     finishDrop.forEach((cell) => {
-        if(cell.getAttribute("data-color") == cell.children[0].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[1].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[2].getAttribute("data-color") && cell.getAttribute("data-color") == cell.children[3].getAttribute("data-color")){
+        if(cell.getAttribute("data-color") == cell.children[0].getAttribute("data-color")){
             alert("Вхід успішний")
+            closeAuditPopup(),
+            closePopup(),
+            registration.innerText = "Привіт Влад"
         }else{
             alert("Колір блоку не відповідає кольору рамки, спробуйте ще раз!")
             closeAuditPopup()
@@ -361,3 +375,48 @@ function loadRegistrationText(yourName, yourEmail){
 }
 
 loadRegistrationText(yourName, yourEmail)
+
+/*slideButton.forEach((e) =>{
+    e.onclick = showCite
+}),
+cite[0].classList.add("showed-cite"), 
+slideButton[0].style.backgroundColor = "#c0301c", 
+cite[0].style.height = cite[0].getBoundingClientRect().height + "px";
+for (let e = 0; e < cite.length; e++){
+    cite[e].dataset.number = e, 
+    slideButton[e].dataset.digit = e;
+} 
+
+function citeInterval() {
+	clearCiteInterval = setInterval(() => {
+		showedCite = document.querySelector(".showed-cite"), 
+		showedCite.classList.remove("showed-cite"), 
+		null == showedCite.nextElementSibling ? (showedCite.parentElement.firstElementChild.classList.add("showed-cite"), 
+        parentPadding = showedCite.parentElement.firstElementChild.clientHeight, 
+        number = showedCite.parentElement.firstElementChild.getAttribute("data-number")) : (showedCite.nextElementSibling.classList.add("showed-cite"), 
+        parentPadding = showedCite.nextElementSibling.clientHeight, 
+        number = showedCite.nextElementSibling.getAttribute("data-number")), 
+        showedCite.parentElement.style.height = parentPadding + "px";
+		for (let e = 0; e < cite.length; e++){
+            slideButton[e].getAttribute("data-digit") == number && (slideButton[e].style.backgroundColor = "#c0301c", 
+            e - 1 < 0 ? slideButton[slideButton.length - 1].style.backgroundColor = "#ddd" : slideButton[e - 1].style.backgroundColor = "#ddd")
+        } 
+	}, 5e3)
+}
+
+function showCite() {
+	clearInterval(clearCiteInterval), 
+	showedCite = document.querySelector(".showed-cite"), 
+	showedCite.classList.remove("showed-cite"), 
+	slideButton.forEach(e => {
+		showedCite.getAttribute("data-number") == e.getAttribute("data-digit") && (e.style.backgroundColor = "#ddd")
+	}), 
+	this.style.backgroundColor = "#c0301c", 
+	cite.forEach(e => {
+		e.getAttribute("data-number") == this.getAttribute("data-digit") && (console.log("adasf"), 
+		e.classList.add("showed-cite"), 
+		showedCite = document.querySelector(".showed-cite"), 
+		showedCite.parentElement.style.height = showedCite.clientHeight + "px", 
+		citeInterval())
+	})
+}*/

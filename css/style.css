@@ -791,6 +791,29 @@ input.submit:hover {
     border: 1px solid brown;
 }
 
+.quotes cite {
+	font-size: 1.5rem;
+	font-style: normal
+}
+.cites {
+	position: relative;
+	margin-bottom: 40px;
+	transition: all .5s ease
+}
+.cite {
+	position: absolute;
+	margin: 0;
+	padding: 0 10%;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transition: all 1s ease
+}
+.showed-cite {
+	opacity: 1
+}
 .slide {
 	display: flex;
 	justify-content: center;
