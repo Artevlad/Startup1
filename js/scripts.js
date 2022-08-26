@@ -60,7 +60,10 @@ let bgHeader = document.querySelector(".bg-header"),
 	peopleSlider = document.querySelector(".people-line"),
 	peoples = document.querySelectorAll(".people"),
 	peopleWidth = peoples[0].getBoundingClientRect().width,
-	peopleSliderWidth = Math.round(peopleSlider.getBoundingClientRect().width)
+	peopleSliderWidth = Math.round(peopleSlider.getBoundingClientRect().width),
+    burger = document.querySelector(".burger-menu"),
+	burgerMenu = document.querySelector(".menu"),
+    menuLine = document.querySelector(".line-menu")
 
 greenColorFirst.dataset.color = "green",
 redColorFirst.dataset.color = "red",

@@ -919,20 +919,6 @@ input.submit:hover {
 		font-weight: 700;
 		line-height: 2rem;
 	}
-	.burger-menu {
-		display: block;
-	}
-	.burger-menu-active {
-		position: fixed;
-		z-index: 15;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		flex-wrap: wrap;
-		padding: 7.5%;
-		box-sizing: border-box;
-		background-color: rgba(192, 48, 28, .9);
-	}
 	.services-menu {
 		flex-wrap: wrap;
 		justify-content: center;
