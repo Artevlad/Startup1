@@ -54,16 +54,18 @@ let bgHeader = document.querySelector(".bg-header"),
     scrollGetInTouch = document.getElementById("get-in-touch"),
     subject = document.getElementById("subject"),
     message = document.getElementById("message"),
-    cite = document.querySelector(".cite"),
-    slideButton = document.querySelector(".slide-button"),
-    showedCite,
+    cite = document.querySelectorAll(".cite"),
+    slideButton = document.querySelectorAll(".slide-button"),
+    timer,
 	peopleSlider = document.querySelector(".people-line"),
 	peoples = document.querySelectorAll(".people"),
 	peopleWidth = peoples[0].getBoundingClientRect().width,
 	peopleSliderWidth = Math.round(peopleSlider.getBoundingClientRect().width),
-    burger = document.querySelector(".burger-menu"),
-	burgerMenu = document.querySelector(".menu"),
-    menuLine = document.querySelector(".line-menu")
+    animLeft = document.querySelectorAll(".animation-left"),
+	animRight = document.querySelectorAll(".animation-right"),
+	animBottom = document.querySelectorAll(".animation-bottom"),
+	animation = document.querySelectorAll(".animation"),
+	startAnim = window.innerHeight - 10 * window.innerHeight / 100
 
 greenColorFirst.dataset.color = "green",
 redColorFirst.dataset.color = "red",
@@ -399,51 +401,51 @@ function peopleFalse() {
 left.onclick = peopleLeft, 
 right.onclick = peopleRight, 
 left.ondblclick = peopleFalse, 
-right.ondblclick = peopleFalse,
+right.ondblclick = peopleFalse
 
-slideButton.forEach((e) =>{
-    e.onclick = showCite
-}),
-cite[0].classList.add("showed-cite"), 
-slideButton[0].style.backgroundColor = "#c0301c", 
-cite[0].style.height = cite[0].getBoundingClientRect().height + "px";
-for (let e = 0; e < cite.length; e++){
-    cite[e].dataset.number = e, 
-    slideButton[e].dataset.digit = e;
-} 
-
-function citeInterval() {
-    clearCiteInterval = setInterval(() => {
-        showedCite = document.querySelector(".showed-cite"), 
-        showedCite.classList.remove("showed-cite"), 
-        null == showedCite.nextElementSibling ? (showedCite.parentElement.firstElementChild.classList.add("showed-cite"), 
-        parentPadding = showedCite.parentElement.firstElementChild.clientHeight, 
-        number = showedCite.parentElement.firstElementChild.getAttribute("data-number")) : (showedCite.nextElementSibling.classList.add("showed-cite"), 
-        parentPadding = showedCite.nextElementSibling.clientHeight, 
-        number = showedCite.nextElementSibling.getAttribute("data-number")), 
-        showedCite.parentElement.style.height = parentPadding + "px";
-        for (let e = 0; e < cite.length; e++){
-            slideButton[e].getAttribute("data-digit") == number && (slideButton[e].style.backgroundColor = "#c0301c", 
-            e - 1 < 0 ? slideButton[slideButton.length - 1].style.backgroundColor = "#ddd" : slideButton[e - 1].style.backgroundColor = "#ddd")
-        } 
+function autoSlider(){
+    cite[0].classList.add('showed-cite'),
+    slideButton[0].style.backgroundColor = "#c0301c", 
+    cite[0].style.height = cite[0].getBoundingClientRect().height + "px";
+    for (let i = 0; i < cite.length; i++){
+        cite[i].dataset.number = i, 
+        slideButton[i].dataset.digit = i;
+    } 
+    timer = setInterval(() => {
+        for(let e = 0; e <= cite.length; e++){
+            if(cite[e].getAttribute("data-number") == e){
+                cite[e].classList.add('showed-cite'),
+                slideButton[e].style.backgroundColor = "#c0301c"
+                if(e == 1){
+                    cite[e - 1].classList.remove('showed-cite')
+                    slideButton[e - 1].style.backgroundColor = "#ddd"
+                }
+                if(e == 2){
+                    cite[e - 1].classList.remove('showed-cite')
+                    slideButton[e - 1].style.backgroundColor = "#ddd"
+                }
+                if(e == 0){
+                    cite[2].classList.remove('showed-cite')
+                    slideButton[2].style.backgroundColor = "#ddd"
+                    clearInterval(timer)
+                }
+            }
+        }
     }, 5e3)
 }
 
-function showCite() {
-    clearInterval(clearCiteInterval), 
-    showedCite = document.querySelector(".showed-cite"), 
-    showedCite.classList.remove("showed-cite"), 
-    slideButton.forEach(e => {
-        showedCite.getAttribute("data-number") == e.getAttribute("data-digit") && (e.style.backgroundColor = "#ddd")
-    }), 
-    this.style.backgroundColor = "#c0301c", 
-    cite.forEach(e => {
-        e.getAttribute("data-number") == this.getAttribute("data-digit") && (console.log("adasf"), 
-        e.classList.add("showed-cite"), 
-        showedCite = document.querySelector(".showed-cite"), 
-        showedCite.parentElement.style.height = showedCite.clientHeight + "px", 
-        citeInterval())
-    })
-}
+autoSlider()
 
-citeInterval()
+function checkScroll() {
+	animLeft.forEach(e => {
+		window.pageYOffset + startAnim >= e.offsetTop && window.pageYOffset <= e.offsetTop && e.classList.remove("animation-left")
+	}), animRight.forEach(e => {
+		window.pageYOffset + startAnim >= e.offsetTop && window.pageYOffset <= e.offsetTop && e.classList.remove("animation-right")
+	}), animBottom.forEach(e => {
+		window.pageYOffset + startAnim >= e.offsetTop && window.pageYOffset <= e.offsetTop && e.classList.remove("animation-bottom")
+	}), animation.forEach(e => {
+		window.pageYOffset + startAnim >= e.offsetTop && window.pageYOffset <= e.offsetTop && e.classList.remove("animation")
+	})
+}
+window.onwheel = checkScroll
+window.onscroll = checkScroll

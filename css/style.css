@@ -817,9 +817,6 @@ input.submit:hover {
 	opacity: 0;
 	transition: all 1s ease
 }
-.showed-cite {
-	opacity: 1
-}
 .slide {
 	display: flex;
 	justify-content: center;
@@ -1023,4 +1020,39 @@ input.submit:hover {
 	.div-flex{
 		display: block;
 	}
+}
+
+.showed-cite {
+	opacity: 1;
+	position: relative;
+}
+
+.animation {
+	opacity: 0;
+}
+.animation-left {
+	transform: translateX(-150%);
+}
+.animation-right {
+	transform: translateX(150%);
+}
+.animation-bottom {
+	transform: translateY(150%);
+}
+
+.cites, 
+.companies, 
+.services, 
+.info, 
+.ul-menu, 
+.like, 
+.people-relative, 
+.post img, 
+.post-info, 
+.registr-form, 
+.quotes, 
+section h2, 
+section:first-child p,
+.photos {
+	transition: all .5s ease;
 }
