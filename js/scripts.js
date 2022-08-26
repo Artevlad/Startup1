@@ -129,7 +129,6 @@ function auditPopupOpen() {
     }
 }
 
-registerSubmit.onclick = auditPopupOpen
 registration.onclick = popupOpen
 
 function closePopup() {
@@ -300,7 +299,7 @@ const dragAndDrop = () => {
         this.classList.remove('hovered')
     }
     
-    const dragDrop = function (event) {
+    const dragDrop = function () {
         this.append(nowBlock)
         nowBlock.classList.add('end-styles')
         this.classList.remove('hovered')
@@ -365,9 +364,10 @@ function loadInfo(nameUser, email, companyName){
 }
 loadInfo(nameUser, email, companyName)
 
+
 function registrationText(yourName, yourEmail) {
-    localStorage.setItem('YourName', yourName.value)
-    localStorage.setItem('YourEmail', yourEmail.value)
+    localStorage.setItem('YourName', yourName)
+    localStorage.setItem('YourEmail', yourEmail)
 }
 
 function loadRegistrationText(yourName, yourEmail){
@@ -375,7 +375,7 @@ function loadRegistrationText(yourName, yourEmail){
         yourName.value = localStorage.getItem('YourName');
         console.log(yourName.value)
     }
-    if(localStorage.yourEmail != null){
+    if(localStorage.YourEmail != null){
         yourEmail.value = localStorage.getItem('YourEmail');
         console.log(yourEmail.value)
     }
@@ -383,6 +383,11 @@ function loadRegistrationText(yourName, yourEmail){
 
 loadRegistrationText(yourName, yourEmail)
 
+registerSubmit.addEventListener("click", function(event){
+    event.preventDefault()
+    registrationText(yourName.value, yourEmail.value)
+    auditPopupOpen()
+})
 
 function peopleLeft() {
 	peopleSliderWidth = Math.floor(peopleSliderWidth), 
@@ -412,7 +417,8 @@ function autoSlider(){
         slideButton[i].dataset.digit = i;
     } 
     timer = setInterval(() => {
-        for(let e = 0; e <= cite.length; e++){
+        for(let e = 0; e < cite.length; e++){
+            console.log(cite[e].getAttribute("data-number"))
             if(cite[e].getAttribute("data-number") == e){
                 cite[e].classList.add('showed-cite'),
                 slideButton[e].style.backgroundColor = "#c0301c"
@@ -431,7 +437,7 @@ function autoSlider(){
                 }
             }
         }
-    }, 5e3)
+    }, 100)
 }
 
 autoSlider()
