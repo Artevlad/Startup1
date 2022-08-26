@@ -396,7 +396,7 @@ function peopleFalse() {
 left.onclick = peopleLeft, 
 right.onclick = peopleRight, 
 left.ondblclick = peopleFalse, 
-right.ondblclick = peopleFalse
+right.ondblclick = peopleFalse,
 
 slideButton.forEach((e) =>{
     e.onclick = showCite
